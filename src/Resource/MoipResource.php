@@ -324,4 +324,16 @@ abstract class MoipResource implements JsonSerializable
     {
         return $this->httpRequest($path, Requests::DELETE);
     }
+
+    /**
+     * Convert the object in to a JSON string.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        $string = json_encode($this, JSON_UNESCAPED_SLASHES);
+
+        return $string;
+    }
 }
